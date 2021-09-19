@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="title mat-display-2">Đăng ký</h1>
+
+  <form #signupForm="ngForm" (submit)="handleSubmit()">
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Tài Khoản</mat-label>
+      <input #username="ngModel" required matInput ngModel name="taiKhoan" />
+      <mat-error *ngIf="username.errors?.required"
+        >Vui lòng nhập tài khoản</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Mật khẩu</mat-label>
+      <input
+        #password="ngModel"
+        required
+        minlength="8"
+        maxlength="16"
+        matInput
+        type="password"
+        ngModel
+        name="matKhau"
+      />
+      <mat-error *ngIf="password.errors?.required"
+        >Vui lòng nhập mật khẩu</mat-error
+      >
+      <mat-error
+        *ngIf="password.errors?.minlength || password.errors?.maxlength"
+        >Vui lòng nhập 8 - 16 kí tự</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input #email="ngModel" required matInput ngModel name="email" />
+      <mat-error *ngIf="email.errors?.required">Vui lòng nhập email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Họ tên</mat-label>
+      <input #name="ngModel" required matInput ngModel name="hoTen" />
+      <mat-error *ngIf="name.errors?.required">Vui lòng nhập họ tên</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Số ĐT</mat-label>
+      <input #phone="ngModel" pattern="^[0-9]+$" matInput ngModel name="soDt" />
+      <mat-error *ngIf="phone.errors?.pattern"
+        >Số điện thoại không đúng</mat-error
+      >
+    </mat-form-field>
+
+    <div class="btn-group">
+      <button mat-raised-button color="primary">Đăng ký</button>
+    </div>
+  </form>
+</div>

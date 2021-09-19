@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="title mat-display-2">Đăng Nhập</h1>
+
+  <form #signinForm="ngForm" (submit)="handleSubmitLogin()">
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Tài Khoản</mat-label>
+      <input #username="ngModel" matInput ngModel name="taiKhoan" />
+    </mat-form-field>
+
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Mật khẩu</mat-label>
+      <input
+        #password="ngModel"
+        matInput
+        ngModel
+        type="password"
+        name="matKhau"
+      />
+    </mat-form-field>
+
+    <div class="btn-group">
+      <button mat-raised-button color="primary">Đăng Nhập</button>
+    </div>
+  </form>
+</div>

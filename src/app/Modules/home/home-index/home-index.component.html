@@ -1,0 +1,11 @@
+<!-- <button mat-stroked-button color="primary">Primary</button>
+<button mat-raised-button color="primary">Primary</button> -->
+<div class="container">
+  <h1 class="title">Danh Sách Phim</h1>
+  <div fxLayout="row wrap" fxLayoutGap="20px grid">
+    <div *ngFor="let item of movieLists" fxFlex="25%" fxFlex.xs="100%">
+      <app-movie-item [movie]="item"></app-movie-item>
+    </div>
+  </div>
+  <button (click)="handleDelete()">Delete</button>
+</div>

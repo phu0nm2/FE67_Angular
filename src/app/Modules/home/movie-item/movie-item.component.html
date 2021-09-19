@@ -1,0 +1,14 @@
+<mat-card>
+  <img [src]="movie.hinhAnh" width="100%" height="350px" mat-card-image />
+  <mat-card-title>{{ movie.tenPhim }}</mat-card-title>
+  <mat-card-content>{{ movie.biDanh }}</mat-card-content>
+  <mat-card-actions>
+    <button
+      [routerLink]="'/detail/' + movie.maPhim"
+      mat-raised-button
+      color="primary"
+    >
+      Xem Chi tiet
+    </button>
+  </mat-card-actions>
+</mat-card>
